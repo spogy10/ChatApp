@@ -1,6 +1,9 @@
 package poliv.jr.com.login;
 
+import org.greenrobot.eventbus.Subscribe;
+
 import poliv.jr.com.lib.EventBus;
+import poliv.jr.com.lib.GreenRobotEventBus;
 import poliv.jr.com.login.events.LoginEvent;
 import poliv.jr.com.login.ui.LoginView;
 
@@ -12,7 +15,7 @@ public class LoginPresenterImpl implements LoginPresenter {
 
     public LoginPresenterImpl(LoginView loginView){
         this.loginView = loginView;
-        //todo: this.eventBus =
+        this.eventBus = GreenRobotEventBus.getInstance();
         this.loginInteractor = new LoginInteractorImpl();
     }
 
@@ -38,6 +41,7 @@ public class LoginPresenterImpl implements LoginPresenter {
     }
 
     @Override
+    @Subscribe
     public void onEventMainThread(LoginEvent event) {
         switch (event.getEventType()){
             case LoginEvent.onSignInError:

@@ -14,6 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 import poliv.jr.com.contactlist.entities.User;
 import poliv.jr.com.domain.FirebaseHelper;
 import poliv.jr.com.lib.EventBus;
+import poliv.jr.com.lib.GreenRobotEventBus;
 import poliv.jr.com.login.events.LoginEvent;
 
 class LoginRepositoryImpl implements LoginRepository {
@@ -130,7 +131,7 @@ class LoginRepositoryImpl implements LoginRepository {
             loginEvent.setErrorMessage(errorMessage);
         }
 
-       //todo EventBus eventBus = GreenRobotEventBus.getInstance();
-        //todo eventBus.post(loginEvent);
+       EventBus eventBus = GreenRobotEventBus.getInstance();
+        eventBus.post(loginEvent);
     }
 }
