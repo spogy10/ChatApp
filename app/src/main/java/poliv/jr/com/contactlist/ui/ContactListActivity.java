@@ -18,6 +18,7 @@ import poliv.jr.com.AndroidChatApplication;
 import poliv.jr.com.addcontact.ui.AddContactFragment;
 import poliv.jr.com.chatapp.R;
 import poliv.jr.com.contactlist.ContactListPresenter;
+import poliv.jr.com.contactlist.ContactListPresenterImpl;
 import poliv.jr.com.contactlist.adapters.ContactListAdapter;
 import poliv.jr.com.contactlist.entities.User;
 import poliv.jr.com.lib.ImageLoader;
@@ -40,7 +41,7 @@ public class ContactListActivity extends Activity implements ContactListView, On
         setContentView(R.layout.activity_contact_list);
         ButterKnife.bind(this);
 
-        //todo contactListPresenter = new
+        contactListPresenter = new ContactListPresenterImpl(this);
         contactListPresenter.onCreate();
 
         toolbar.setSubtitle(contactListPresenter.getCurrentUserEmail());

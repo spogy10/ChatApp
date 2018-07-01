@@ -1,6 +1,7 @@
 package poliv.jr.com.login.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
@@ -15,6 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import poliv.jr.com.chatapp.R;
+import poliv.jr.com.contactlist.ui.ContactListActivity;
 import poliv.jr.com.login.LoginPresenter;
 import poliv.jr.com.login.LoginPresenterImpl;
 
@@ -81,7 +83,7 @@ public class LoginActivity extends Activity implements LoginView {
 
     @Override
     public void navigateToMainScreen() {
-        //todo: create intent
+        startActivity(new Intent(this, ContactListActivity.class));
     }
 
     @Override
