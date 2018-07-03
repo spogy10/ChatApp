@@ -19,7 +19,7 @@ public class ChatInteractorImpl implements ChatInteractor {
 
     @Override
     public void setRecipient(String recipient) {
-        chatRepository.sendMessage(recipient);
+        chatRepository.setReceiver(recipient);
     }
 
     @Override

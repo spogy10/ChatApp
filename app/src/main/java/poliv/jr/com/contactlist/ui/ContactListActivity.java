@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -92,6 +93,7 @@ public class ContactListActivity extends Activity implements ContactListView, On
 
     @OnClick(R.id.fab)
     public void addContact(){
+
         AddContactFragment frag = new AddContactFragment();
         frag.show(getFragmentManager(), "");
     }

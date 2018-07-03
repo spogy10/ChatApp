@@ -1,5 +1,7 @@
 package poliv.jr.com.chat;
 
+import org.greenrobot.eventbus.Subscribe;
+
 import poliv.jr.com.chat.entities.ChatMessage;
 import poliv.jr.com.chat.events.ChatEvent;
 import poliv.jr.com.chat.ui.ChatView;
@@ -56,6 +58,7 @@ public class ChatPresenterImpl implements ChatPresenter {
     }
 
     @Override
+    @Subscribe
     public void onEventMainThread(ChatEvent event) {
         if(chatView != null){
             ChatMessage msg = event.getMessage();
