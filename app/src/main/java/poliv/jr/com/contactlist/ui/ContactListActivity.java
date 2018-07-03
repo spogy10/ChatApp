@@ -16,6 +16,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import poliv.jr.com.AndroidChatApplication;
 import poliv.jr.com.addcontact.ui.AddContactFragment;
+import poliv.jr.com.chat.ui.ChatActivity;
 import poliv.jr.com.chatapp.R;
 import poliv.jr.com.contactlist.ContactListPresenter;
 import poliv.jr.com.contactlist.ContactListPresenterImpl;
@@ -123,7 +124,10 @@ public class ContactListActivity extends Activity implements ContactListView, On
 
     @Override
     public void onItemClick(User user) {
-        //todo add chat activity intent
+        Intent i = new Intent(this, ChatActivity.class);
+        i.putExtra(ChatActivity.EMAIL_KEY, user.getEmail());
+        i.putExtra(ChatActivity.ONLINE_KEY, user.isOnline());
+        startActivity(i);
     }
 
     @Override

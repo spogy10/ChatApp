@@ -19,9 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="poliv.jr.com.contactlist.ui.ContactListActivity"
+        <activity
+            android:name="poliv.jr.com.contactlist.ui.ContactListActivity"
             android:label="@string/contactlist.title"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="poliv.jr.com.chat.ui.ChatActivity"></activity>
     </application>
 
 </manifest>
